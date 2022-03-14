@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import React, {useEffect} from "react";
+import {Routes, Route, useNavigate} from "react-router-dom";
 import axios from "axios";
 // INFO: import useSelector to get the state from redux
-import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "./store/slice/auth";
+import {useDispatch, useSelector} from "react-redux";
+import {authActions} from "./store/slice/auth";
 
 // INFO: import Pages
 import Home from "./pages/home/Home";
-import { Auth, ForgotPassword, GoogleOAuth, ResetPassword } from "./pages/auth";
+import {Auth, ForgotPassword, GoogleOAuth, ResetPassword} from "./pages/auth";
 import Hubboard from "./pages/hubboard/Hubboard";
 import {
   MailSuccess,
@@ -15,7 +15,8 @@ import {
   Register,
   ResendEmailVerification,
 } from "./pages/auth/register";
-import { Mainpage } from "./pages/hubboard/main";
+import {Mainpage} from "./pages/hubboard/main";
+import Profile from "./pages/hubboard/account/Profile";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,8 @@ const App = () => {
           dispatch(authActions.login());
           navigate("/hubboard");
         }
-      } catch (err) {}
+      } catch (err) {
+      }
     };
     verify();
   });
@@ -37,25 +39,25 @@ const App = () => {
   // INFO: different routing path
   return (
     <Routes>
-      <Route path="/" element={<Home isAuthenticated={isAuthenticated} />} />
-      <Route path="signup" element={<Register />} />
-      <Route path="forgotpw" element={<ForgotPassword />} />
-      <Route path="/auth" element={<Auth />}>
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-        <Route path="mailsuccess" element={<MailSuccess />} />
-        <Route path="resendEmail" element={<ResendEmailVerification />} />
-        <Route path=":token" element={<MailVerification />} />
-        <Route path="forgotpw/:token" element={<ResetPassword />} />
+      <Route path="/" element={<Home isAuthenticated={isAuthenticated}/>}/>
+      <Route path="signup" element={<Register/>}/>
+      <Route path="forgotpw" element={<ForgotPassword/>}/>
+      <Route path="/auth" element={<Auth/>}>
+        <Route path="*" element={<h1>404 Not Found</h1>}/>
+        <Route path="mailsuccess" element={<MailSuccess/>}/>
+        <Route path="resendEmail" element={<ResendEmailVerification/>}/>
+        <Route path=":token" element={<MailVerification/>}/>
+        <Route path="forgotpw/:token" element={<ResetPassword/>}/>
       </Route>
-      <Route path="/googlecb" element={<GoogleOAuth />} />
+      <Route path="/googlecb" element={<GoogleOAuth/>}/>
       <Route
         path="/hubboard"
-        element={<Hubboard isAuthenticated={isAuthenticated} />}
+        element={<Hubboard isAuthenticated={isAuthenticated}/>}
       >
-        <Route path="" element={<Mainpage />} />
-        <Route path="profile" element={<h1>You in profile page</h1>} />
+        <Route path="" element={<Mainpage/>}/>
+        <Route path="profile" element={<Profile/>}/>
       </Route>
-      <Route path="*" element={<h1>404 Not found</h1>} />
+      <Route path="*" element={<h1>404 Not found</h1>}/>
     </Routes>
   );
 };

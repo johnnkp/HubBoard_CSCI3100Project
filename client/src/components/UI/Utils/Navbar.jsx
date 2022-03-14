@@ -56,15 +56,18 @@ const Navbar = (props) => {
             <img src={HuboardIcon} height="50px" alt="HubBoard" title="HubBoard"/>
             <Typography variant="h5">HubBoard</Typography>
           </Box>
-          <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="space-evenly"
-            minWidth="150px"
-          >
-            <Typography>Toolbar</Typography>
+          {props.ToolbarButton ?
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="space-evenly"
+              minWidth="150px"
+            >
+              <Typography>Toolbar</Typography>
+              <DropDownMenu profilePhoto={profilePhoto} pages={pages}/>
+            </Box> :
             <DropDownMenu profilePhoto={profilePhoto} pages={pages}/>
-          </Box>
+          }
         </Box>
       </Toolbar>
     </AppBar>

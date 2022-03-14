@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   return (
     <Wrapper>
       <CssBaseline/>
-      <Navbar handleDrawerToggle={handleDrawerToggle} />
+      <Navbar handleDrawerToggle={handleDrawerToggle} ToolbarButton={true}/>
       <Box display="flex">
         <SideBar drawerOpen={drawerOpen} handleDrawerToggle={handleDrawerToggle} />
         <Box component="main" sx={{ flexGrow: 1 }}>
