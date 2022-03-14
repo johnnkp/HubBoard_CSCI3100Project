@@ -15,7 +15,7 @@ const Profile = () => {
       <CssBaseline/>
       <Navbar handleDrawerToggle={handleDrawerToggle} ToolbarButton={false}/>
       <Box display="flex">
-        <SideBar drawerOpen={drawerOpen} handleDrawerToggle={handleDrawerToggle}/>
+        <SideBar drawerOpen={drawerOpen} handleDrawerToggle={handleDrawerToggle} items="account"/>
         <Box component="main" sx={{flexGrow: 1}}>
           <h1>You in profile page</h1>
         </Box>
