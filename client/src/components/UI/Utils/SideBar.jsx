@@ -2,17 +2,22 @@ import React from "react";
 import {
   Box,
   Drawer,
-  Toolbar,
+  Icon,
   List,
   ListItemButton,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Toolbar
 } from "@mui/material";
 import {
   EventNoteRounded,
+  SyncRounded,
   TagRounded,
-  SyncRounded
+  Key
 } from "@mui/icons-material";
+import classes from "../../../styles/global.module.css";
+import userInfoIcon from "../../../image/user_info_100.svg";
+import adminIcon from "../../../image/system-users-50.svg";
 
 // INFO: width for the sidebar
 const sidebarWidth = 240;
@@ -24,6 +29,14 @@ const SideBar = (props) => {
 
   if (props.items === "account") {
     item = ["Profile", "Change Password", "Admin Management"];
+    icon = [<Icon>
+      <img height="100%" src={userInfoIcon} alt="Profile" title="Profile"/>
+    </Icon>,
+      <Key/>,
+      <Icon>
+        <img height="100%" src={adminIcon} alt="Admin Management" title="Admin Management"/>
+      </Icon>
+    ];
   }
 
   return (
