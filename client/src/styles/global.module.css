@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
+/* import Slide from '@mui/material/Slide'; */
+.w3_slide_bottom {
+    position: relative;
+    animation: animatebottom 0.5s
+}
+
+.w3_slide_bottom_07s {
+    position: relative;
+    animation: animatebottom 0.7s
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.w3_text_150 {
+    font-size: 150%;
+}
+
+.w3_svg_white {
+    filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(87deg) brightness(106%) contrast(101%);
+}
