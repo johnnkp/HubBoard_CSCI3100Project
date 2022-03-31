@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Mobile main page layout -->
+    <meta charset="utf-8">
+    <title>HubBoard</title>
+    <style>
+        /* Apple San Francisco Pro font */
+        @font-face {
+            font-family: sf_pro_display_regular;
+            src: url(styles/fonts/SF-Pro-Display-Regular.woff2);
+        }
+
+        @font-face {
+            font-family: sf_pro_display_medium;
+            src: url(styles/fonts/SF-Pro-Display-Medium.woff2);
+        }
+
+        #app_bar {
+            background-color: #FFB000;
+            /* https://stackoverflow.com/questions/1575141/how-to-make-a-div-100-height-of-the-browser-window */
+            height: 10vh;
+            min-height: 50px;
+            margin: -8px -8px 5px;
+        }
+
+        #app_bar img {
+            vertical-align: -50%;
+        }
+
+        #menu {
+            font-family: sf_pro_display_regular;
+            font-size: 120%;
+            width: 40vh;
+        }
+
+        #menu img {
+            margin-top: 5%;
+            margin-left: 2%;
+            margin-right: 5%;
+        }
+
+        #menu_note {
+            height: 10vh;
+        }
+
+        #menu_tag {
+            height: 10vh;
+        }
+
+        #menu_not_active {
+            height: 10vh;
+        }
+
+        #menu_sync {
+            height: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app_bar">
+    <img src="image/ic_menu_en.svg" style="margin-top: 1vh; margin-left: 1%;" height="70%" alt="Menu" title="Menu"/>
+    <img src="image/HubBoard.svg" style="margin-top: 1vh; margin-left: 3vh; margin-right: 2vh;" height="70%"
+         alt="HubBoard"
+         title="HubBoard"/>
+    <span style="font-family: sf_pro_display_medium; font-size: 150%;">HubBoard</span>
+    <!-- KDE Breeze Icons 5.90 -->
+    <img src="image/system-users.svg" style="margin-top: 0.5vh; margin-right: 1vh;" height="85%" align="right"/>
+    <img src="image/emblem-added.svg" style="float: right; margin-top: 2.5vh; margin-right: 3vh;" height="50%"
+         alt="Add new to-do list" title="Add new to-do list"/>
+</div>
+
+<div align="center" style="font-family: sf_pro_display_regular">
+    <p style="color: silver">mobile navigation bar only have one add button</p>
+    <p style="color: silver">when user click Menu button, Menu will slide out by '@mui/material/Drawer';</p>
+    (main interface here)
+</div>
+
+</body>
+</html>
