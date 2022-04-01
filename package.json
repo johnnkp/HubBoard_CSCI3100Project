@@ -24,6 +24,11 @@
     "socket.io": "^4.4.1",
     "socket.io-client": "^4.4.1"
   },
+  "overrides": {
+    "chai-http": {
+      "@types/superagent": "4.1.15"
+    }
+  },
   "scripts": {
     "client-dev": "cd client && npm run start",
     "server-dev": "nodemon app.js",
