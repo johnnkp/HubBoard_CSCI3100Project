@@ -26,7 +26,8 @@
   },
   "overrides": {
     "chai-http": {
-      "@types/superagent": "4.1.15"
+      "@types/superagent": "4.1.15",
+      "superagent": "7.1.1"
     }
   },
   "scripts": {
