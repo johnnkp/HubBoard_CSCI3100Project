@@ -1,25 +1,17 @@
-import React, { useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import React, {useEffect} from "react";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import axios from "axios";
 // INFO: import useSelector to get the state from redux
-import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "./store/slice/auth";
+import {useDispatch, useSelector} from "react-redux";
+import {authActions} from "./store/slice/auth";
 
 // INFO: import Pages
 import Home from "./pages/home/Home";
-import { Auth, ForgotPassword, GoogleOAuth, ResetPassword } from "./pages/auth";
+import {Auth, ForgotPassword, GoogleOAuth, ResetPassword} from "./pages/auth";
 import Hubboard from "./pages/hubboard/Hubboard";
-import {
-  MailSuccess,
-  MailVerification,
-  Register,
-  ResendEmailVerification,
-} from "./pages/auth/register";
-import {
-  Mainpage,
-  Profilepage,
-  ChangePasswordpage,
-} from "./pages/hubboard/main";
+import {MailSuccess, MailVerification, Register, ResendEmailVerification} from "./pages/auth/register";
+import {ChangePasswordpage, Mainpage, Profilepage} from "./pages/hubboard/main";
+import Syncpage from "./pages/hubboard/main/Syncpage";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +25,8 @@ const App = () => {
           dispatch(authActions.login());
           navigate("/hubboard");
         }
-      } catch (err) {}
+      } catch (err) {
+      }
     };
     verify();
   });
@@ -43,26 +36,28 @@ const App = () => {
   // INFO: different routing path
   return (
     <Routes>
-      <Route path="/" element={<Home isAuthenticated={isAuthenticated} />} />
-      <Route path="signup" element={<Register />} />
-      <Route path="forgotpw" element={<ForgotPassword />} />
-      <Route path="/auth" element={<Auth />}>
-        <Route path="*" element={<h1>404 Not Found</h1>} />
-        <Route path="mailsuccess" element={<MailSuccess />} />
-        <Route path="resendEmail" element={<ResendEmailVerification />} />
-        <Route path=":token" element={<MailVerification />} />
-        <Route path="forgotpw/:token" element={<ResetPassword />} />
+      <Route path="/" element={<Home isAuthenticated={isAuthenticated}/>}/>
+      <Route path="signup" element={<Register/>}/>
+      <Route path="forgotpw" element={<ForgotPassword/>}/>
+      <Route path="/auth" element={<Auth/>}>
+        <Route path="*" element={<h1>404 Not Found</h1>}/>
+        <Route path="mailsuccess" element={<MailSuccess/>}/>
+        <Route path="resendEmail" element={<ResendEmailVerification/>}/>
+        <Route path=":token" element={<MailVerification/>}/>
+        <Route path="forgotpw/:token" element={<ResetPassword/>}/>
       </Route>
-      <Route path="/googlecb" element={<GoogleOAuth />} />
+      <Route path="/googlecb" element={<GoogleOAuth/>}/>
       <Route
         path="/hubboard"
-        element={<Hubboard isAuthenticated={isAuthenticated} />}
+        element={<Hubboard isAuthenticated={isAuthenticated}/>}
       >
-        <Route path="" element={<Mainpage />} />
-        <Route path="profile" element={<Profilepage />} />
-        <Route path="changepassword" element={<ChangePasswordpage />} />
+        <Route path="" element={<Mainpage/>}/>
+        <Route path="note" element={<Mainpage/>}/>
+        <Route path="sync" element={<Syncpage/>}/>
+        <Route path="profile" element={<Profilepage/>}/>
+        <Route path="changepassword" element={<ChangePasswordpage/>}/>
       </Route>
-      <Route path="*" element={<h1>404 Not found</h1>} />
+      <Route path="*" element={<h1>404 Not found</h1>}/>
     </Routes>
   );
 };

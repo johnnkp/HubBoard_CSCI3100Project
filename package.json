@@ -25,9 +25,8 @@
     "socket.io-client": "^4.4.1"
   },
   "overrides": {
-    "chai-http": {
-      "@types/superagent": "4.1.15",
-      "superagent": "7.1.1"
+    "superagent": {
+      "formidable": "2.0.1"
     }
   },
   "scripts": {
