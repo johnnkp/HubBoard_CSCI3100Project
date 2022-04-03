@@ -4,6 +4,14 @@ import {Button, Grid, Stack} from "@mui/material";
 import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
 import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 
+const router = require('express').Router();
+
+const notesGet = () => {
+  router.get('https://keep.googleapis.com/v1/{name=notes/*}', (req, res) => {
+
+  });
+};
+
 const Syncpage = () => {
   return (
     <MainLayout profilepage={false}>
