@@ -12,6 +12,7 @@ import Hubboard from "./pages/hubboard/Hubboard";
 import {MailSuccess, MailVerification, Register, ResendEmailVerification} from "./pages/auth/register";
 import {ChangePasswordpage, Mainpage, Profilepage} from "./pages/hubboard/main";
 import Syncpage from "./pages/hubboard/main/Syncpage";
+import Adminpage from "./pages/hubboard/profile/Adminpage";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -56,6 +57,7 @@ const App = () => {
         <Route path="sync" element={<Syncpage/>}/>
         <Route path="profile" element={<Profilepage/>}/>
         <Route path="changepassword" element={<ChangePasswordpage/>}/>
+        <Route path="adminmanagement" element={<Adminpage/>}/>
       </Route>
       <Route path="*" element={<h1>404 Not found</h1>}/>
     </Routes>

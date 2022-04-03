@@ -24,11 +24,6 @@
     "socket.io": "^4.4.1",
     "socket.io-client": "^4.4.1"
   },
-  "overrides": {
-    "superagent": {
-      "formidable": "2.0.1"
-    }
-  },
   "scripts": {
     "client-dev": "cd client && npm run start",
     "server-dev": "nodemon app.js",
