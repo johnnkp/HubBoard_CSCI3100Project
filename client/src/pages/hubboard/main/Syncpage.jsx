@@ -1,0 +1,37 @@
+import React from "react";
+import {MainLayout} from "../../../components/Layout";
+import {Button, Grid, Stack} from "@mui/material";
+import CloudUploadRoundedIcon from '@mui/icons-material/CloudUploadRounded';
+import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
+
+const Syncpage = () => {
+  return (
+    <MainLayout profilepage={false}>
+      <Grid container justifyContent="center">
+        <Stack height="85vh" justifyContent="space-evenly" minWidth="50vw" maxWidth="60vw">
+          <Button
+            sx={{boxShadow: 1}}
+            size="large"
+            color="hOrange"
+            startIcon={<CloudDownloadRoundedIcon/>}
+            variant="outlined"
+          >
+            import
+          </Button>
+
+          <Button
+            sx={{boxShadow: 1}}
+            size="large"
+            color="hOrange"
+            startIcon={<CloudUploadRoundedIcon/>}
+            variant="outlined"
+          >
+            export
+          </Button>
+        </Stack>
+      </Grid>
+    </MainLayout>
+  );
+};
+
+export default Syncpage;
